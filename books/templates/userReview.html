@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>Sistema de Recomendacion - Movielens</title>
+</head>
+<body>
+{% include 'header.html' %}
+<h1>Libros puntuados por el usuario {{idUser}}</h1>
+
+{% if items %}
+
+<table class="egt">
+	<tr>
+
+    <td>ISBN</td>
+
+    <td>Titulo</td>
+
+    <td>Puntaje</td>
+
+  </tr>
+{% for isbn, title, punt in items %}
+	<tr>
+
+	  <td>{{isbn}}</td>
+
+	  <td>{{title}}</td>
+
+	  <td>{{punt}}</td>
+
+	</tr>
+{% endfor %}
+</table>
+
+{% else %}
+<h2> Insufficient user data </h2>
+{%endif %}
+
+</body>
+</html>

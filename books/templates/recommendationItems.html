@@ -1,0 +1,21 @@
+<html>
+<head>
+<title>Sistema de Recomendacion - Movielens</title>
+</head>
+<body>
+{% include 'header.html' %}
+{% if user %}
+<h1>Peliculas Recomendadas para el Usuario {{idUser}}</h1>
+{% for item, score in items %}
+<ul>
+<li>Title: {{item.titulo}}  Score:{{score | floatformat:"2"}}</li>
+</ul>
+{% empty %}
+<h2> No hay usuarios similares. </h2>
+{% endfor %}
+
+{% else %}
+<h2> El usuario ingresado no existe. </h2>
+{% endif %}
+</body>
+</html>

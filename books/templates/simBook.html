@@ -1,0 +1,22 @@
+<html>
+<head>
+<title>Sistema de Recomendacion - Libros</title>
+</head>
+<body>
+{% include 'header.html' %}
+<section>
+{% if book %}
+<h1>5 Libros que mas se parecen al libro {{bookId}} son:</h1>
+<l>
+{% for isbn, coef in items %}
+<li>ISBN: {{isbn}}   Similarity: {{coef | floatformat:"2"}}</li>
+{% endfor %}
+</l>
+</section>
+{%else%}
+<section>
+<p>No existe el libro ingresado</p>>
+</section>
+{%endif%}
+</body>
+</html>
