@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>Sistema de Recomendacion - Libros</title>
+</head>
+<body>
+{% include 'header.html' %}
+<h1>Mejores libros</h1>
+
+{% if books %}
+
+<table class="egt">
+	<tr>
+
+    <td>ISBN</td>
+
+    <td>Titulo</td>
+
+    <td>Puntaje</td>
+
+    <td>Puntaje</td>
+
+  </tr>
+{% for isbn, title, author, punt in books %}
+	<tr>
+
+	  <td>{{isbn}}</td>
+
+	  <td>{{title}}</td>
+
+	  <td>{{author}}</td>
+
+	  <td>{{punt}}</td>
+
+	</tr>
+{% endfor %}
+</table>
+
+{% else %}
+<h2> No data </h2>
+{%endif %}
+
+</body>
+</html>
